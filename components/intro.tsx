@@ -31,10 +31,10 @@ export default function Intro() {
                         height="192"
                         quality="95"
                         priority={true}
-                        className="rounded-full border-4 border-white shadow-2xl"
+                        className="select-none rounded-full border-4 border-white shadow-2xl"
                     />
                     <motion.span
-                        className="absolute bottom-0 right-0 text-4xl"
+                        className="select-none absolute bottom-0 right-0 text-4xl"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{
@@ -54,7 +54,7 @@ export default function Intro() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                 >
-                    <span className="text-[#f0a5a3] font-bold block mb-2">Hola, soy Iván.</span>
+                    <span className="text-[#f0a5a3] font-bold block mb-2">Hola, soy Iván Schwab.</span>
                     <span className="block">
                         Soy analista de sistemas y desarrollador de software, especializado en aplicaciones web.
                     </span>
@@ -69,50 +69,49 @@ export default function Intro() {
 
 
                 <motion.div
-    className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-lg font-medium"
-    initial={{ opacity: 0, y: 100 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.5 }}
->
-    <Link
-        href="#contact"
-        className="group bg-transparent text-[#F1F0F6] px-8 py-4 rounded-full transform transition duration-200 hover:text-[#816cf7] hover:scale-105"
-    >
-        Contáctame aquí
-    </Link>
-    
-    <a 
-        className="group bg-transparent text-[#F1F0F6] px-8 py-4 rounded-full border-2 border-[#7441c7] hover:bg-[#7441c7] hover:text-white transition duration-200"
-        href="/Cv/ivanschwabcv.pdf"
-        download
-    >
-        <span className="inline-flex items-center">
-            <span className="mr-2">
-                <FaDownload />
-            </span>
-            Descargar CV
-        </span>
-    </a>
+                    className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-lg font-medium"
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                >
+                    <Link
+                        href="#contact"
+                        className="group bg-transparent text-[#F1F0F6] px-8 py-4 rounded-full transform transition duration-200 hover:text-[#816cf7] hover:scale-105"
+                    >
+                        Contáctame aquí
+                    </Link>
 
-    {/* Contenedor para LinkedIn y GitHub */}
-    <div className="flex  sm:flex-row sm:gap-6 gap-4 sm:justify-start justify-center w-full sm:w-auto">
-        <a
-            className="bg-transparent p-4 text-[#F1F0F6] hover:text-[#7996f7] hover:bg-transparent transition duration-200"
-            href="https://www.linkedin.com/in/iv%C3%A1n-schwab/"
-            target="_blank"
-        >
-            <BsLinkedin size={28} />
-        </a>
+                    <a
+                        className="group bg-transparent text-[#F1F0F6] px-8 py-4 rounded-full border-2 border-[#7441c7] hover:bg-[#7441c7] hover:text-white transition duration-200"
+                        href="/Cv/ivanschwabcv.pdf"
+                        download
+                    >
+                        <span className="inline-flex items-center">
+                            <span className="mr-2">
+                                <FaDownload />
+                            </span>
+                            Descargar CV
+                        </span>
+                    </a>
 
-        <a
-            className="bg-transparent p-4 text-[#F1F0F6] hover:text-[#39d353] hover:bg-transparent transition duration-200"
-            href="https://github.com/IvanSchwab"
-            target="_blank"
-        >
-            <FaGithubSquare size={28} />
-        </a>
-    </div>
-</motion.div>
+                    <div className="flex  sm:flex-row sm:gap-6 gap-4 sm:justify-start justify-center w-full sm:w-auto">
+                        <a
+                            className="bg-transparent p-4 text-[#F1F0F6] hover:text-[#7996f7] hover:bg-transparent transition duration-200"
+                            href="https://www.linkedin.com/in/iv%C3%A1n-schwab/"
+                            target="_blank"
+                        >
+                            <BsLinkedin size={28} />
+                        </a>
+
+                        <a
+                            className="bg-transparent p-4 text-[#F1F0F6] hover:text-[#39d353] hover:bg-transparent transition duration-200"
+                            href="https://github.com/IvanSchwab"
+                            target="_blank"
+                        >
+                            <FaGithubSquare size={28} />
+                        </a>
+                    </div>
+                </motion.div>
 
 
             </div>

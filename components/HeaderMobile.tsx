@@ -7,7 +7,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 type HeaderMobileProps = {
     links: readonly { name: string; hash: string }[];
     isMobile: boolean;
-    className?: string; // Agregamos esta propiedad opcional
+    className?: string; 
 
 };
 
@@ -19,12 +19,12 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({ links, isMobile }) => {
 
     return (
         <div>
-            {/* Botón animado para abrir/cerrar el menú */}
+            {/* Botón menú */}
             <motion.button
                 onClick={toggleMenu}
                 className="sm:hidden fixed  top-4 left-4 z-10"
-                whileHover={{ scale: 1.1 }} // Animación al pasar el ratón
-                whileTap={{ scale: 0.9 }}   // Animación al hacer clic
+                whileHover={{ scale: 1.1 }} 
+                whileTap={{ scale: 0.9 }}   
             >
                 <motion.div
                     initial={{ rotate: 0 }}
