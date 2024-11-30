@@ -24,13 +24,25 @@ const Footer = () => {
         setStatusMessage('Enviando...');
 
         try {
-            setTimeout(() => {
-                setIsSubmitting(false);
+            const response = await fetch('/api/sendEmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData), 
+            });
+
+            if (response.ok) {
                 setStatusMessage('¡Correo enviado con éxito!');
-            }, 2000);
+                setFormData({ name: '', email: '', subject: '', message: '' }); 
+            } else {
+                setStatusMessage('Hubo un error al enviar el correo.');
+            }
         } catch (error) {
-            setIsSubmitting(false);
+            console.error('Error al enviar correo:', error);
             setStatusMessage('Hubo un error al enviar el correo.');
+        } finally {
+            setIsSubmitting(false);
         }
     };
 
@@ -94,8 +106,8 @@ const Footer = () => {
                             onChange={handleInputChange}
                             className="w-full px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7441c7] bg-[#272537] text-white min-h-[4rem] max-h-[10rem]"
                             required
-                            minLength={10} 
-                            maxLength={500} 
+                            minLength={10}
+                            maxLength={500}
                         ></textarea>
 
                     </div>
