@@ -4,7 +4,6 @@ import { skillsData } from "@/lib/data";
 import { motion } from "framer-motion";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import Image from "next/image";
 
 const fadeInAnimationVariants = {
   initial: {

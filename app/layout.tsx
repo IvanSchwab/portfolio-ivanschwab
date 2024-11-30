@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Intro from "@/components/Intro";
-import Divider from "@/components/Divider";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Work from "@/components/Work";
-import Proyects from "@/components/Projects";
-import Footer from "@/components/Footer";
+import Intro from "../components/Intro";
+import Divider from "../components/Divider";
+import About from "../components/About";
+import Skills from "../components/Skills";
+import Work from "../components/Work";
+import Proyects from "../components/Projects";
+import Footer from "../components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
