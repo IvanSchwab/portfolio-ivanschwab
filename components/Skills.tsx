@@ -4,6 +4,7 @@ import { skillsData } from "@/lib/data";
 import { motion } from "framer-motion";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import Image from "next/image";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -46,7 +47,7 @@ export default function Skills() {
             data-aos-delay={index * 100}
           >
             <div className="mb-4 flex justify-center">
-              <img
+              <Image
                 src={skill.icon}
                 alt={skill.name}
                 className="w-12 h-12 mx-auto" 

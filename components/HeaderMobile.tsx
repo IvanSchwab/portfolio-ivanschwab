@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { links } from "@/lib/data";
 import Link from "next/link";
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 type HeaderMobileProps = {
     links: readonly { name: string; hash: string }[];
-    isMobile: boolean;
     className?: string; 
 
 };
 
-const HeaderMobile: React.FC<HeaderMobileProps> = ({ links, isMobile }) => {
+const HeaderMobile: React.FC<HeaderMobileProps> = ({ links }) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => setMenuOpen(!menuOpen);

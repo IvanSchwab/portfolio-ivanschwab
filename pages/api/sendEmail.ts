@@ -1,4 +1,3 @@
-// pages/api/sendEmail.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 
@@ -7,11 +6,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const { name, email, subject, message } = req.body;
 
         try {
-            const response = await axios.post(
+            await axios.post(
                 'https://api.resend.com/emails',
                 {
                     from: 'onboarding@resend.dev',
-                    to: 'ivan_schwab@outlook.com', 
+                    to: 'ivan_schwab@outlook.com',
                     subject: subject,
                     html: `
                         <p><strong>Nombre:</strong> ${name}</p>
