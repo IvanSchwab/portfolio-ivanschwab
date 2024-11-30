@@ -47,7 +47,7 @@ export default function Skills() {
             data-aos-delay={index * 100}
           >
             <div className="mb-4 flex justify-center">
-              <Image
+              <img
                 src={skill.icon}
                 alt={skill.name}
                 className="w-12 h-12 mx-auto" 
