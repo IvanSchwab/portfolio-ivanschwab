@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { links } from "../lib/data";
+import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import HeaderMobile from "./HeaderMobile";

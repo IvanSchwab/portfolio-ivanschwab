@@ -1,5 +1,5 @@
 import React from "react";
-import { experiencesData } from "../lib/data";
+import { experiencesData } from "@/lib/data";
 
 const Work = () => {
   return (

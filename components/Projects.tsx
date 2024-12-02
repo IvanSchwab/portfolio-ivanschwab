@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { projectsData } from "../lib/data";
+import { projectsData } from "@/lib/data";
 import AOS from "aos";
 
 const Projects = () => {
