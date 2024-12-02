@@ -1,13 +1,14 @@
-import Header from "@/components/Header";
-import "./globals.css";
 import { Inter } from "next/font/google";
-import Intro from "../components/Intro";
-import Divider from "../components/Divider";
-import About from "../components/About";
-import Skills from "../components/Skills";
-import Work from "../components/Work";
-import Proyects from "../components/Projects";
-import Footer from "../components/Footer";
+import Header from "@/components/Header";
+import Intro from "@/components/Intro";
+import Divider from "@/components/Divider";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Work from "@/components/Work";
+import Projects from "@/components/Projects";
+import Footer from "@/components/Footer";
+import "./globals.css";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,7 +44,7 @@ export default function RootLayout({
         <Divider></Divider>
         <Work></Work>
         <Divider></Divider>
-        <Proyects></Proyects>
+        <Projects></Projects>
         <Divider></Divider>
         <Skills></Skills>
         <Footer></Footer>
