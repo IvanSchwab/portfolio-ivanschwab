@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Divider = () => {
+export default function Divider() {
     useEffect(() => {
         AOS.init({
             duration: 600,
@@ -18,6 +18,4 @@ const Divider = () => {
             data-aos="fade-up"
         />
     );
-};
-
-export default Divider;
+}

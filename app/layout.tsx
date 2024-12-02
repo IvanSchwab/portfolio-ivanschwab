@@ -3,10 +3,10 @@ import Skills from "@/components/Skills";
 import Work from "@/components/Work";
 import Projects from "@/components/Projects";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Intro from "@/components/Intro";
 import Divider from "@/components/Divider";
 import About from "@/components/About";
+import Header from "@/components/Header";
 import "./globals.css";
 
 

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const About = () => {
+export default function About() {
     useEffect(() => {
         AOS.init({
             duration: 1500,
@@ -70,6 +70,4 @@ const About = () => {
             </p>
         </section>
     );
-};
-
-export default About;
+}
