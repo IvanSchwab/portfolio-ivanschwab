@@ -1,6 +1,14 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "aos/dist/aos.css";
+
+declare global {
+    interface Window {
+        grecaptcha: {
+            execute: (siteKey: string, options: { action: string }) => Promise<string>;
+        }
+    }
+}
 
 const Footer = () => {
     const [formData, setFormData] = useState({
@@ -11,10 +19,37 @@ const Footer = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [statusMessage, setStatusMessage] = useState('');
+    const [captchaToken, setCaptchaToken] = useState('');
+
+    // Cargar el script de Google reCAPTCHA v3
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+
+        // Asegurarse de que el script esté cargado antes de ejecutar reCAPTCHA
+        script.onload = () => {
+            console.log('reCAPTCHA script cargado');
+        };
+    }, []);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+    };
+
+    const handleCaptcha = async () => {
+        try {
+            if (!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+                throw new Error('reCAPTCHA site key is not defined');
+            }
+            const token = await window.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: 'submit' });
+            setCaptchaToken(token); 
+        } catch (error) {
+            console.error('Error al obtener el token de reCAPTCHA', error);
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,18 +57,25 @@ const Footer = () => {
         setIsSubmitting(true);
         setStatusMessage('Enviando...');
 
+        if (!captchaToken) {
+            setStatusMessage('Por favor, verifica el captcha.');
+            setIsSubmitting(false);
+            return;
+        }
+
         try {
+            // Incluir el token de reCAPTCHA en los datos del formulario
             const response = await fetch('/api/sendEmail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData), 
+                body: JSON.stringify({ ...formData, captchaToken }), 
             });
 
             if (response.ok) {
                 setStatusMessage('¡Correo enviado con éxito!');
-                setFormData({ name: '', email: '', subject: '', message: '' }); 
+                setFormData({ name: '', email: '', subject: '', message: '' });
             } else {
                 setStatusMessage('Hubo un error al enviar el correo.');
             }
@@ -46,16 +88,16 @@ const Footer = () => {
     };
 
     return (
-
-        <footer id="contact" className="bg-[#35344A] text-white py-8 px-4 w-full"
-            data-aos="fade-in">
+        
+        <footer id="contact" className="bg-[#35344A] text-white py-8 px-4 w-full" 
+        data-aos="fade-in">
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-3xl mb-4 select-none">¡Conéctate conmigo!</h2>
                 <p className="mb-6 text-lg text-gray-300">
                     Puedes escribirme a{' '}
-                    <a
-                        href="mailto:ivan_schwab@outlook.com"
-                        className="text-[#f88dc6] hover:text-[#c97fa7] transition-colors duration-300"
+                    <a 
+                    href="mailto:ivan_schwab@outlook.com" 
+                    className="text-[#f88dc6] hover:text-[#c97fa7] transition-colors duration-300"
                     >
                         ivan_schwab@outlook.com
                     </a>{' '}
@@ -108,13 +150,13 @@ const Footer = () => {
                             minLength={10}
                             maxLength={500}
                         ></textarea>
-
+                        
                     </div>
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className={`w-full px-6 py-3 rounded-lg bg-[#7441c7] text-white transition-all duration-300 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#6a2fb4]'
-                            }`}
+                        className={`w-full px-6 py-3 rounded-lg bg-[#7441c7] text-white transition-all duration-300 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#6a2fb4]'} `}
+                        onClick={handleCaptcha} // Llamar al captcha antes de enviar
                     >
                         {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
                     </button>
