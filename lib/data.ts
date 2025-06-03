@@ -37,12 +37,25 @@ export const links = [
 
 export const experiencesData = [
     {
+        title: "Desarrollador Frontend",
+        location: "Mapaprop",
+        description:
+            "Diseño y desarrollo de sitios web inmobiliarios personalizados según requerimientos de clientes. Creación de prototipos visuales en Figma e implementación de interfaces utilizando PHP, TypeScript y Tailwind CSS, integradas con la API Express de Mapaprop. Desarrollo de componentes y páginas completas cuando los requerimientos superan las funcionalidades base. Gestión autónoma del proceso completo —requerimientos, diseño, desarrollo y entrega— en coordinación directa con el equipo técnico de Mapaprop.",
+        icon: React.createElement(CgWorkAlt),
+        date: "Noviembre 2024 - Actualidad",
+        technologies: ["PHP", "TypeScript", "Vue.js", "Tailwind CSS", "Figma", "Git"],
+
+    }
+    ,
+    {
         title: "Desarrollador Full Stack",
         location: "Access Informática",
         description:
             "Desarrollé una aplicación web para gestionar y visualizar historiales de chats de una IA, incluyendo autenticación mediante cuentas propias o verificación de Outlook.",
         icon: React.createElement(CgWorkAlt),
         date: "Marzo - Julio 2024",
+        technologies: ["React", "TypeScript", "MongoDB", "Node.js", "Git"],
+
     },
     {
         title: "Atención al Cliente",
@@ -51,6 +64,8 @@ export const experiencesData = [
             "Gestioné procesos de cobranza, resolviendo pagos pendientes y ofreciendo soluciones personalizadas para regularizar la situación de los clientes.",
         icon: React.createElement(CgWorkAlt),
         date: "2023",
+        technologies: ["Excel", "Atención al Cliente", "Resolución de Problemas", "Comunicación Efectiva"],
+
     },
     {
         title: "Administrador de Datos de Consorcio",
@@ -58,7 +73,9 @@ export const experiencesData = [
         description:
             "Gestiono un sistema digital de registros mensuales de copropietarios, incluyendo datos como nombres, departamentos y montos a abonar.",
         icon: React.createElement(CgWorkAlt),
-        date: "Actualmente",
+        date: "Septiembre 2024 - Actualidad",
+        technologies: ["Excel", "Administración de Datos", "Organización", "Comunicación"],
+
     },
 ] as const;
 
@@ -100,5 +117,4 @@ export const skillsData = [
     { name: "Spring Boot", icon: "/icons/spring-svgrepo-com.svg" },
     { name: "Tailwind", icon: "/icons/tailwind-svgrepo-com.svg" },
     { name: "APIs REST", icon: "/icons/rest-api-svgrepo-com.svg" },
-    { name: "WPF", icon: "/icons/windows-applications-svgrepo-com.svg" },
 ] as const;

@@ -21,15 +21,30 @@ const Work = () => {
               <div className="text-5xl text-[#E88FBF] flex-shrink-0">
                 {experience.icon}
               </div>
-              <div className="flex flex-col gap-2 text-white">
+              <div className="flex flex-col gap-2 text-white max-w-7xl">
                 <h3 className="text-2xl font-semibold">{experience.title}</h3>
                 <p className="text-sm text-gray-300 italic">{experience.location}</p>
                 <p className="text-gray-200">{experience.description}</p>
                 <p className="text-sm text-gray-400 mt-2">{experience.date}</p>
+
+                {experience.technologies && (
+                  <div className="flex flex-wrap gap-2 mt-2 text-sm">
+                    {experience.technologies.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="bg-white/20 text-white px-3 py-1 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
+
           ))}
         </div>
+
       </div>
     </section>
   );
