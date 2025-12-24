@@ -7,113 +7,166 @@ import Link from "next/link";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
+import { useTranslations, useLocale } from "next-intl";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 export default function Intro() {
+    const t = useTranslations('hero');
+    const locale = useLocale();
+    const activeLocale = locale.toUpperCase();
+
     return (
         <section
             id="home"
-            className="py-10 flex items-center justify-center px-4 sm:px-8"
+            className="min-h-screen"
         >
-            <div className="flex flex-col items-center text-center">
+            {/* Language Switcher */}
+            <div className="absolute top-4 right-4 z-50 sm:top-8 sm:right-8">
+                <LocaleSwitcher />
+            </div>
+            {/* Animated blob backgrounds */}
+            <div className="absolute inset-0 overflow-hidden -z-10">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                        type: "tween",
-                        duration: 0.5,
+                    className="absolute top-20 left-10 w-72 h-72 bg-[#ff7f7f] rounded-full mix-blend-multiply filter blur-xl opacity-70"
+                    animate={{
+                        x: [0, 30, -20, 0],
+                        y: [0, -50, 20, 0],
+                        scale: [1, 1.1, 0.9, 1],
                     }}
-                    className="relative"
-                >
-                    <Image
-                        src="/images/foto-cv.png"
-                        alt="Iván Schwab"
-                        width="192"
-                        height="192"
-                        quality="95"
-                        priority={true}
-                        className="select-none rounded-full border-4 border-white shadow-2xl"
-                    />
-                    <motion.span
-                        className="select-none absolute bottom-0 right-0 text-4xl"
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            type: "spring",
-                            stiffness: 125,
-                            delay: 0.1,
-                            duration: 0.7,
-                        }}
-                    >
-                        🚀
-                    </motion.span>
-                </motion.div>
-
-                <motion.h1
-                    className="mt-6 text-2xl sm:text-3xl font-semibold leading-relaxed sm:leading-normal max-w-md sm:max-w-xl lg:max-w-2xl mx-auto text-center"
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                >
-                    <span className="text-[#f0a5a3] font-bold block mb-2">Hola, soy Iván Schwab.</span>
-                    <span className="block">
-                        Soy analista de sistemas y desarrollador de software, especializado en aplicaciones web.
-                    </span>
-                    <span className="block">
-                        Trabajo con distintas tecnologías como{" "} <br />
-                        <span className="underline text-[#F1F0F6]">React, TypeScript y C#</span>.
-                    </span>
-                    <span className="block">
-                        Me apasiona resolver problemas y crear soluciones innovadoras mediante la tecnología.
-                    </span>
-                </motion.h1>
-
-
+                    transition={{
+                        duration: 7,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                ></motion.div>
                 <motion.div
-                    className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-lg font-medium"
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                >
-                    <Link
-                        href="#contact"
-                        className="group bg-transparent text-[#F1F0F6] px-8 py-4 rounded-full transform transition duration-200 hover:text-[#816cf7] hover:scale-105"
-                    >
-                        Contáctame aquí
-                    </Link>
+                    className="absolute top-40 right-10 w-72 h-72 bg-[#f6d8f2] rounded-full mix-blend-multiply filter blur-xl opacity-70"
+                    animate={{
+                        x: [0, -30, 20, 0],
+                        y: [0, 40, -30, 0],
+                        scale: [1, 0.9, 1.1, 1],
+                    }}
+                    transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 1,
+                    }}
+                ></motion.div>
+                <motion.div
+                    className="absolute -bottom-8 left-40 w-72 h-72 bg-[#e88fbf] rounded-full mix-blend-multiply filter blur-xl opacity-70"
+                    animate={{
+                        x: [0, 40, -10, 0],
+                        y: [0, -30, 40, 0],
+                        scale: [1, 1.05, 0.95, 1],
+                    }}
+                    transition={{
+                        duration: 9,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 2,
+                    }}
+                ></motion.div>
+            </div>
 
-                    <a
-                        className="group bg-transparent text-[#F1F0F6] px-8 py-4 rounded-full border-2 border-[#7441c7] hover:bg-[#7441c7] hover:text-white transition duration-200"
-                        href="/Cv/ivanschwabcv.pdf"
-                        download
-                    >
-                        <span className="inline-flex items-center">
-                            <span className="mr-2">
-                                <FaDownload />
-                            </span>
-                            Descargar CV
-                        </span>
-                    </a>
+            {/* Gradient fade-out overlay at bottom for smooth transition */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#0a0a0f] z-10 pointer-events-none"></div>
 
-                    <div className="flex  sm:flex-row sm:gap-6 gap-4 sm:justify-start justify-center w-full sm:w-auto">
+            <div className="relative z-20 max-w-6xl mx-auto py-20 px-4 sm:px-8 flex flex-col-reverse md:grid md:grid-cols-2 gap-12 items-center">
+                {/* Left side - Text content */}
+                <div className="space-y-8 text-center md:text-left">
+                    <motion.h1
+                        className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#f0a5a3] via-[#E88FBF] to-[#7441c7]"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        {t('greeting')}
+                    </motion.h1>
+
+                    <motion.div
+                        className="space-y-4 text-lg sm:text-xl text-gray-200 leading-relaxed"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.8 }}
+                    >
+                        <p>{t('intro')}</p>
+                        <p>
+                            {t('tech')}{" "}
+                            <span className="font-semibold text-[#F3B2D1]">{t('techHighlight')}</span>.
+                        </p>
+                        <p className="text-gray-300">{t('passion')}</p>
+                    </motion.div>
+
+                    <motion.div
+                        className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4, duration: 0.8 }}
+                    >
+                        <Link
+                            href="#contact"
+                            className="px-8 py-4 bg-gradient-to-r from-[#7441c7] to-[#E88FBF] text-white rounded-full font-semibold shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 hover:scale-105 active:scale-95"
+                        >
+                            {t('ctaContact')}
+                        </Link>
                         <a
-                            className="bg-transparent p-4 text-[#F1F0F6] hover:text-[#7996f7] hover:bg-transparent transition duration-200"
+                            href={`/Cv/CV-IvanSchwab-${activeLocale}-2025.pdf`}
+                            download={`CV-IvanSchwab-${activeLocale}-2025.pdf`}
+                            className="px-8 py-4 border-2 border-[#7441c7] text-[#F1F0F6] rounded-full font-semibold hover:bg-[#7441c7] hover:text-white transition-all duration-300 transform hover:scale-105 active:scale-95 inline-flex items-center gap-2"
+                        >
+                            <FaDownload />
+                            {t('ctaDownload')}
+                        </a>
+                    </motion.div>
+
+                    {/* Social links */}
+                    <motion.div
+                        className="flex gap-4 justify-center md:justify-start"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.6, duration: 0.8 }}
+                    >
+                        <a
                             href="https://www.linkedin.com/in/iv%C3%A1n-schwab/"
                             target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 bg-white/10 backdrop-blur-sm rounded-full text-[#F1F0F6] hover:bg-[#0077b5] hover:text-white transition-all duration-300 hover:scale-110 active:scale-95"
                         >
-                            <BsLinkedin size={28} />
+                            <BsLinkedin size={24} />
                         </a>
-
                         <a
-                            className="bg-transparent p-4 text-[#F1F0F6] hover:text-[#39d353] hover:bg-transparent transition duration-200"
                             href="https://github.com/IvanSchwab"
                             target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 bg-white/10 backdrop-blur-sm rounded-full text-[#F1F0F6] hover:bg-[#333] hover:text-white transition-all duration-300 hover:scale-110 active:scale-95"
                         >
-                            <FaGithubSquare size={28} />
+                            <FaGithubSquare size={24} />
                         </a>
+                    </motion.div>
+                </div>
+
+                {/* Right side - Image */}
+                <motion.div
+                    className="relative flex justify-center md:justify-end"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3, duration: 0.8 }}
+                >
+                    <div className="relative">
+                        <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto md:mx-0 rounded-full overflow-hidden border-8 border-white/20 shadow-2xl hover:scale-105 transition-transform duration-500 backdrop-blur-sm">
+                            <Image
+                                src="/images/foto-cv.png"
+                                alt="Iván Schwab"
+                                width="384"
+                                height="384"
+                                quality="95"
+                                priority={true}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
                     </div>
                 </motion.div>
-
-
             </div>
         </section>
     );

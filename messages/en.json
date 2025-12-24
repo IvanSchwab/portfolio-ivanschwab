@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Iván Schwab.",
+    "intro": "I'm a systems analyst and software developer, specialized in web applications.",
+    "tech": "I work with different technologies like",
+    "techHighlight": "React, TypeScript, and C#",
+    "passion": "I'm passionate about solving problems and creating innovative solutions through technology.",
+    "ctaContact": "Contact me here",
+    "ctaDownload": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "paragraph1": "I'm a certified Systems Analyst and on my way to obtaining a Computer Engineering degree. Passionate about software development, I specialize in creating modern web applications, with experience in both frontend and backend. I work with technologies such as React, TypeScript, Java, C#, and PHP, applying solid design principles through UML diagrams.",
+    "paragraph2": "I currently work as a Frontend Developer at Mapaprop, where I design and develop custom real estate websites according to specific client requirements. I use Figma to create visual prototypes and technologies such as PHP, TypeScript, Vue.js, and Tailwind CSS to implement interfaces. I handle the complete cycle: requirements gathering, design, development, and site delivery, in direct coordination with the technical team.",
+    "paragraph3": "Previously, I worked as a Full Stack Developer at Access Informática, developing a web application to manage and display AI chat histories. You can see the project repository at this",
+    "link": "link",
+    "paragraph4": "I implemented authentication with Outlook and used technologies such as React, TypeScript, MongoDB, and Node.js.",
+    "paragraph5": "Throughout my career, I have also gained experience in customer service, honing my problem-solving skills and managing interpersonal relationships. I currently manage a digital registration system for co-owner payments, which reflects my organizational capacity and technical precision.",
+    "paragraph6": "My goal is to continue growing in the field of software development, facing new challenges that allow me to innovate and provide technological solutions that make a difference."
+  },
+  "experience": {
+    "title": "My Work Experience",
+    "developmentTitle": "Development Experience",
+    "otherTitle": "Other Professional Experience",
+    "experiences": {
+      "mapaprop": {
+        "title": "Frontend Developer",
+        "location": "Mapaprop",
+        "description": "Design and development of custom real estate websites according to client requirements. Creation of visual prototypes in Figma and implementation of interfaces using PHP, TypeScript, and Tailwind CSS, integrated with Mapaprop's Express API. Development of components and complete pages when requirements exceed base functionalities. Autonomous management of the complete process—requirements, design, development, and delivery—in direct coordination with Mapaprop's technical team.",
+        "date": "November 2024 - Present"
+      },
+      "access": {
+        "title": "Full Stack Developer",
+        "location": "Access Informática",
+        "description": "Developed a web application to manage and display AI chat histories, including authentication via proprietary accounts or Outlook verification.",
+        "date": "March - July 2024"
+      },
+      "automationSuite": {
+        "title": "Real Estate Operations Automation Suite",
+        "location": "Real Estate Agency",
+        "description": "Comprehensive automation system developed to optimize operations for a local real estate agency. Includes automated payment tracker in Excel, optimized consortium fee workflow, and IT infrastructure upgrade. Results: 70% reduction in manual work, 75% faster processing.",
+        "date": "May 2025 - Present"
+      },
+      "cobranzas": {
+        "title": "Customer Service",
+        "location": "Debt Collection Company",
+        "description": "Managed collection processes, resolving pending payments and offering personalized solutions to regularize customer situations.",
+        "date": "2023"
+      },
+      "consorcio": {
+        "title": "Condominium Data Administrator",
+        "location": "Freelance",
+        "description": "Manage a digital system for monthly co-owner records, including data such as names, apartments, and amounts to be paid.",
+        "date": "September 2024 - Present"
+      }
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewProject": "View Project",
+    "viewGithub": "View on GitHub",
+    "items": {
+      "chatManager": {
+        "title": "Chat History Manager",
+        "description": "Web application developed for Access Informática, allowing management and visualization of AI chat histories with authentication via proprietary accounts or Outlook verification."
+      },
+      "realState": {
+        "title": "Real Estate Property Manager",
+        "description": "Website designed for a real estate agency that allows managing and storing properties, providing clients with the ability to make inquiries and organize relevant information."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "contact": {
+    "title": "Connect with me!",
+    "emailText": "You can email me at",
+    "formText": "or directly through here:",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "messagePlaceholder": "Your message",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "successMessage": "Message sent successfully!",
+    "errorMessage": "Error sending message. Please try again."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

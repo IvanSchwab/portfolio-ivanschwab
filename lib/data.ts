@@ -37,6 +37,8 @@ export const links = [
 
 export const experiencesData = [
     {
+        key: "mapaprop",
+        type: "dev",
         title: "Desarrollador Frontend",
         location: "Mapaprop",
         description:
@@ -45,9 +47,10 @@ export const experiencesData = [
         date: "Noviembre 2024 - Actualidad",
         technologies: ["PHP", "TypeScript", "Vue.js", "Tailwind CSS", "Figma", "Git"],
 
-    }
-    ,
+    },
     {
+        key: "access",
+        type: "dev",
         title: "Desarrollador Full Stack",
         location: "Access Informática",
         description:
@@ -58,6 +61,18 @@ export const experiencesData = [
 
     },
     {
+        key: "automationSuite",
+        type: "dev",
+        title: "Automatización de operaciones inmobiliarias",
+        location: "Olivera de Schwab Propiedades",
+        description: "Sistema integral de automatización desarrollado para optimizar operaciones de una Olivera de Schwab Propiedades. Incluye tracker automatizado de pagos en Excel, workflow optimizado de cobro de consorcios, y upgrade de infraestructura IT. Resultados: 70% reducción en trabajo manual, procesamiento 75% más rápido.",
+        icon: React.createElement(CgWorkAlt),
+        date: "Mayo 2025 - Actualidad",
+        technologies: ["Excel", "VBA", "Process Automation", "Hardware Maintenance"],
+    },
+    {
+        key: "cobranzas",
+        type: "other",
         title: "Atención al Cliente",
         location: "Empresa de Gestión de Cobranzas",
         description:
@@ -68,6 +83,8 @@ export const experiencesData = [
 
     },
     {
+        key: "consorcio",
+        type: "other",
         title: "Administrador de Datos de Consorcio",
         location: "Autónomo",
         description:
@@ -81,6 +98,7 @@ export const experiencesData = [
 
 export const projectsData = [
     {
+        key: "chatManager",
         title: "Gestor de Historiales de Chats",
         description:
             "Aplicación web desarrollada para Access Informática, que permite gestionar y visualizar historiales de chats de una IA con autenticación mediante cuentas propias o verificación de Outlook.",
@@ -90,6 +108,7 @@ export const projectsData = [
         link: "https://github.com/IvanSchwab/FrontHistorialChats_ProyectoAccess",
     },
     {
+        key: "realState",
         title: "Gestor de Propiedades para Inmobiliarias",
         description:
             "Página web diseñada para una inmobiliaria que permite gestionar y almacenar propiedades, brindando a los clientes la posibilidad de realizar consultas y organizar información relevante.",
@@ -97,6 +116,7 @@ export const projectsData = [
         imageUrl: "/images/ProyectRealState.png",
         imageMobileUrl: "/images/RealStateMobile.png",
         link: "https://github.com/IvanSchwab/Real-State-App",
+        demoLink: "https://oliveraprop.com.ar/",
     },
 ] as const;
 

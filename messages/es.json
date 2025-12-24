@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy Iván Schwab.",
+    "intro": "Soy analista de sistemas y desarrollador de software, especializado en aplicaciones web.",
+    "tech": "Trabajo con distintas tecnologías como",
+    "techHighlight": "React, TypeScript y C#",
+    "passion": "Me apasiona resolver problemas y crear soluciones innovadoras mediante la tecnología.",
+    "ctaContact": "Contáctame aquí",
+    "ctaDownload": "Descargar CV"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "paragraph1": "Soy Analista en Sistemas titulado y estoy encaminándome a obtener una Ingeniería en Informática. Apasionado por el desarrollo de software, me especializo en la creación de aplicaciones web modernas, con experiencia tanto en el frontend como en el backend. Trabajo con tecnologías como React, TypeScript, Java, C# y PHP, y aplico principios sólidos de diseño mediante diagramas UML.",
+    "paragraph2": "Actualmente me desempeño como Desarrollador Frontend en Mapaprop, donde diseño y desarrollo sitios web inmobiliarios personalizados según requerimientos específicos de clientes. Utilizo Figma para la creación de prototipos visuales y tecnologías como PHP, TypeScript, Vue.js y Tailwind CSS para implementar las interfaces. Me encargo del ciclo completo: toma de requerimientos, diseño, desarrollo y entrega del sitio, en coordinación directa con el equipo técnico.",
+    "paragraph3": "Previamente, trabajé como Desarrollador Full Stack en Access Informática, desarrollando una aplicación web para gestionar historiales de chats de una IA. Puedes ver el repositorio del proyecto en este",
+    "link": "enlace",
+    "paragraph4": "Implementé autenticación con Outlook y usé tecnologías como React, TypeScript, MongoDB y Node.js.",
+    "paragraph5": "A lo largo de mi trayectoria también he adquirido experiencia en atención al cliente, perfeccionando mis habilidades para resolver problemas y gestionar relaciones interpersonales. Actualmente administro un sistema de registro digital para pagos de copropietarios, que refleja mi capacidad de organización y precisión técnica.",
+    "paragraph6": "Mi objetivo es seguir creciendo en el ámbito del desarrollo de software, enfrentando nuevos retos que me permitan innovar y aportar soluciones tecnológicas que marquen la diferencia."
+  },
+  "experience": {
+    "title": "Mi Experiencia Laboral",
+    "developmentTitle": "Experiencia en Desarrollo",
+    "otherTitle": "Otra Experiencia Profesional",
+    "experiences": {
+      "mapaprop": {
+        "title": "Desarrollador Frontend",
+        "location": "Mapaprop",
+        "description": "Diseño y desarrollo de sitios web inmobiliarios personalizados según requerimientos de clientes. Creación de prototipos visuales en Figma e implementación de interfaces utilizando PHP, TypeScript y Tailwind CSS, integradas con la API Express de Mapaprop. Desarrollo de componentes y páginas completas cuando los requerimientos superan las funcionalidades base. Gestión autónoma del proceso completo —requerimientos, diseño, desarrollo y entrega— en coordinación directa con el equipo técnico de Mapaprop.",
+        "date": "Noviembre 2024 - Actualidad"
+      },
+      "access": {
+        "title": "Desarrollador Full Stack",
+        "location": "Access Informática",
+        "description": "Desarrollé una aplicación web para gestionar y visualizar historiales de chats de una IA, incluyendo autenticación mediante cuentas propias o verificación de Outlook.",
+        "date": "Marzo - Julio 2024"
+      },
+      "automationSuite": {
+        "title": "Real Estate Operations Automation Suite",
+        "location": "Olivera de Schwab Propiedades",
+        "description": "Sistema integral de automatización desarrollado para optimizar operaciones de una Olivera de Schwab Propiedades. Incluye tracker automatizado de pagos en Excel, workflow optimizado de cobro de consorcios, y upgrade de infraestructura IT. Resultados: 70% reducción en trabajo manual, procesamiento 75% más rápido.",
+        "date": "Mayo 2025 - Actualidad"
+      },
+      "cobranzas": {
+        "title": "Atención al Cliente",
+        "location": "Empresa de Gestión de Cobranzas",
+        "description": "Gestioné procesos de cobranza, resolviendo pagos pendientes y ofreciendo soluciones personalizadas para regularizar la situación de los clientes.",
+        "date": "2023"
+      },
+      "consorcio": {
+        "title": "Administrador de Datos de Consorcio",
+        "location": "Autónomo",
+        "description": "Gestiono un sistema digital de registros mensuales de copropietarios, incluyendo datos como nombres, departamentos y montos a abonar.",
+        "date": "Septiembre 2024 - Actualidad"
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "viewProject": "Ver Proyecto",
+    "viewGithub": "Ver en GitHub",
+    "items": {
+      "chatManager": {
+        "title": "Gestor de Historiales de Chats",
+        "description": "Aplicación web desarrollada para Access Informática, que permite gestionar y visualizar historiales de chats de una IA con autenticación mediante cuentas propias o verificación de Outlook."
+      },
+      "realState": {
+        "title": "Gestor de Propiedades para Inmobiliarias",
+        "description": "Página web diseñada para una inmobiliaria que permite gestionar y almacenar propiedades, brindando a los clientes la posibilidad de realizar consultas y organizar información relevante."
+      }
+    }
+  },
+  "skills": {
+    "title": "Habilidades"
+  },
+  "contact": {
+    "title": "¡Conéctate conmigo!",
+    "emailText": "Puedes escribirme a",
+    "formText": "o directamente por aquí:",
+    "namePlaceholder": "Tu nombre",
+    "emailPlaceholder": "Tu email",
+    "messagePlaceholder": "Tu mensaje",
+    "sendButton": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "successMessage": "¡Mensaje enviado con éxito!",
+    "errorMessage": "Error al enviar el mensaje. Intenta nuevamente."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  }
+}

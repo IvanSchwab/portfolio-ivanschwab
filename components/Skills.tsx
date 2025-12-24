@@ -1,61 +1,76 @@
 "use client";
 import React from "react";
 import { skillsData } from "@/lib/data";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import "aos/dist/aos.css";
-import AOS from "aos";
 
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    scale: 0.9,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delay: 0.05 * index,
-      ease: "easeOut",
-      duration: 0.5,
-    },
-  }),
-};
+// Categorize skills
+const frontendSkills = ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Vue", "Tailwind"];
+const backendSkills = ["Node.js", "C#", "Java", "Spring Boot", "APIs REST"];
+const databaseSkills = ["MySQL", "MongoDB"];
+const toolsSkills = ["Git", "Kotlin"];
 
 export default function Skills() {
-  React.useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+  const t = useTranslations('skills');
 
-  return (
-    <section id="skills" className="mb-18 max-w-[53rem] scroll-mt-28 text-center sm:mb-40">
-      <h2 className="select-none py-16 px-4 sm:px-8 text-3xl sm:text-4xl font-bold mb-12 text-center" data-aos="fade-up">
-        Habilidades
-      </h2>
+  const getSkillsByCategory = (category: string[]) => {
+    return skillsData.filter(skill => category.includes(skill.name));
+  };
 
-      <ul className="select-none flex flex-wrap justify-center gap-6 text-lg text-gray-800 dark:text-white">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            className="bg-white border-2 border-gray-800 rounded-xl px-6 py-4 text-center transition-all duration-300 transform hover:bg-gray-800 hover:text-white dark:bg-white/10 dark:hover:bg-white/20 dark:hover:text-white"
+  const renderSkillCategory = (title: string, skills: any[], color: string) => (
+    <motion.div
+      className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-xl"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
+      <h3 className={`text-xl font-bold mb-6 ${color}`}>{title}</h3>
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        {skills.map((skill, index) => (
+          <motion.div
             key={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
+            className="flex flex-col items-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            custom={index}
-            data-aos="fade-up"
-            data-aos-delay={index * 100}
+            transition={{ delay: index * 0.05, duration: 0.4 }}
+            whileHover={{ scale: 1.05 }}
           >
-            <div className="mb-4 flex justify-center">
+            <div className="w-12 h-12 mb-3 group-hover:scale-110 transition-transform duration-300">
               <img
                 src={skill.icon}
                 alt={skill.name}
-                className="w-12 h-12 mx-auto" 
+                className="w-full h-full object-contain"
               />
             </div>
-            <span className="block mt-2">{skill.name}</span>
-          </motion.li>
+            <span className="text-sm font-medium text-gray-200 text-center">{skill.name}</span>
+          </motion.div>
         ))}
-      </ul>
+      </div>
+    </motion.div>
+  );
+
+  return (
+    <section id="skills" className="py-16 px-4 sm:px-8">
+      <div className="max-w-6xl mx-auto">
+        <motion.h2
+          className="text-4xl sm:text-5xl font-bold mb-16 text-center text-[#E88FBF]"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {t('title')}
+        </motion.h2>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {renderSkillCategory("Frontend", getSkillsByCategory(frontendSkills), "text-blue-400")}
+          {renderSkillCategory("Backend", getSkillsByCategory(backendSkills), "text-purple-400")}
+          {renderSkillCategory("Databases", getSkillsByCategory(databaseSkills), "text-green-400")}
+          {renderSkillCategory("Tools & Others", getSkillsByCategory(toolsSkills), "text-pink-400")}
+        </div>
+      </div>
     </section>
   );
 }
