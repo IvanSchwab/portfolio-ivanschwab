@@ -5,11 +5,13 @@ import { notFound } from 'next/navigation';
 import Skills from "@/components/Skills";
 import Work from "@/components/Work";
 import Projects from "@/components/Projects";
+import AvailableForProjects from "@/components/AvailableForProjects";
 import Footer from "@/components/Footer";
 import Intro from "@/components/intro";
 import Divider from "@/components/divider";
 import About from "@/components/about";
 import Header from "@/components/header";
+import AOSProvider from "@/components/AOSProvider";
 import "../globals.css";
 import { locales } from "@/i18n/request";
 
@@ -53,20 +55,24 @@ export default async function LocaleLayout({
         <div className="bg-[#e1b7b2] absolute top-[210rem] -z-10 right-[30rem] h-[60rem] w-[75rem] rounded-full blur-[20rem] sm:w-[120rem] dark:bg-[#433c58] hidden sm:block"></div>
 
         <NextIntlClientProvider messages={messages}>
-          {/* Contenido */}
-          <Header />
-          <Intro />
-          <Divider></Divider>
-          <About></About>
-          <Divider></Divider>
-          <Work></Work>
-          <Divider></Divider>
-          <Projects></Projects>
-          <Divider></Divider>
-          <Skills></Skills>
-          <Footer></Footer>
+          <AOSProvider>
+            {/* Contenido */}
+            <Header />
+            <Intro />
+            <Divider></Divider>
+            <About></About>
+            <Divider></Divider>
+            <Work></Work>
+            <Divider></Divider>
+            <AvailableForProjects />
+            <Divider></Divider>
+            <Projects></Projects>
+            <Divider></Divider>
+            <Skills></Skills>
+            <Footer></Footer>
 
-          {children}
+            {children}
+          </AOSProvider>
         </NextIntlClientProvider>
       </body>
     </html>

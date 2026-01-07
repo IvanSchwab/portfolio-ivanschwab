@@ -81,6 +81,43 @@
   "skills": {
     "title": "Skills"
   },
+  "availableForProjects": {
+    "title": "Open to Select Projects",
+    "positioning": "I focus on building the right solution—not just the fastest or easiest one.",
+    "context": "Currently available for freelance projects and technical collaborations with clear scope and communication.",
+    "howIWork": {
+      "title": "How I Work",
+      "items": {
+        "clarity": "Clear communication and structured collaboration from day one",
+        "systemsThinking": "Analytical, systems-oriented approach to understand problems before solving them",
+        "preparation": "Emphasis on solution design and preparation, not just implementation",
+        "technicalJudgment": "Comfortable proposing better technical alternatives when appropriate"
+      }
+    },
+    "projectTypes": {
+      "title": "Project Focus",
+      "items": {
+        "webApps": "Web applications",
+        "backendAPIs": "Backend & APIs",
+        "desktopApps": "Desktop apps",
+        "integrations": "Integrations & AI",
+        "creativeProjects": "Creative tech"
+      },
+      "excludedLabel": "Not a fit",
+      "excluded": {
+        "databaseOnly": "Database-only work",
+        "legacyCode": "Undocumented legacy code",
+        "noScope": "Undefined scope or timelines"
+      }
+    },
+    "languages": {
+      "spanish": "Spanish (native)",
+      "english": "English (professional)"
+    },
+    "cta": {
+      "button": "Let's Talk"
+    }
+  },
   "contact": {
     "title": "Connect with me!",
     "emailText": "You can email me at",

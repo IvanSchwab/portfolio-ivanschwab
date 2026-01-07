@@ -81,6 +81,43 @@
   "skills": {
     "title": "Habilidades"
   },
+  "availableForProjects": {
+    "title": "Abierto a Proyectos Selectos",
+    "positioning": "Me enfoco en construir la solución correcta, no solo la más rápida o fácil.",
+    "context": "Disponible para proyectos freelance y colaboraciones técnicas con alcance y comunicación claros.",
+    "howIWork": {
+      "title": "Cómo Trabajo",
+      "items": {
+        "clarity": "Comunicación clara y colaboración estructurada desde el primer día",
+        "systemsThinking": "Enfoque analítico y orientado a sistemas para entender los problemas antes de resolverlos",
+        "preparation": "Énfasis en diseño y preparación de soluciones, no solo implementación",
+        "technicalJudgment": "Dispuesto a proponer mejores alternativas técnicas cuando corresponda"
+      }
+    },
+    "projectTypes": {
+      "title": "Tipo de Proyectos",
+      "items": {
+        "webApps": "Aplicaciones web",
+        "backendAPIs": "Backend y APIs",
+        "desktopApps": "Apps de escritorio",
+        "integrations": "Integraciones e IA",
+        "creativeProjects": "Tech creativo"
+      },
+      "excludedLabel": "No es un fit",
+      "excluded": {
+        "databaseOnly": "Solo base de datos",
+        "legacyCode": "Legacy sin documentar",
+        "noScope": "Alcance indefinido"
+      }
+    },
+    "languages": {
+      "spanish": "Español (nativo)",
+      "english": "Inglés (profesional)"
+    },
+    "cta": {
+      "button": "Conversemos"
+    }
+  },
   "contact": {
     "title": "¡Conéctate conmigo!",
     "emailText": "Puedes escribirme a",
